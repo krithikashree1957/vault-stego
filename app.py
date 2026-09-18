@@ -6,6 +6,7 @@ import io
 
 from crypto_utils import encrypt_message, decrypt_message
 from stego import hide_data, extract_data
+from passphrase_utils import generate_passphrase
 
 st.set_page_config(page_title="Vault - Secret Messages in Images", page_icon="🔒")
 
@@ -20,7 +21,24 @@ if mode == "Hide a message":
 
     uploaded_image = st.file_uploader("Upload a PNG image", type=["png"])
     message = st.text_area("Secret message")
-    passphrase = st.text_input("Passphrase", type="password")
+
+    if "generated_pw" not in st.session_state:
+        st.session_state.generated_pw = ""
+
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        passphrase = st.text_input(
+            "Passphrase",
+            value=st.session_state.generated_pw,
+            type="password"
+        )
+    with col2:
+        if st.button("🎲 Generate"):
+            st.session_state.generated_pw = generate_passphrase()
+            st.rerun()
+
+    if st.session_state.generated_pw:
+        st.caption(f"Generated passphrase (save this!): `{st.session_state.generated_pw}`")
 
     if st.button("Hide message"):
         if not uploaded_image or not message or not passphrase:
