@@ -87,11 +87,8 @@ elif mode == "Hide a message":
                 encrypted = encrypt_message(message, passphrase)
                 hide_data("temp_input.png", encrypted, "temp_output.png")
 
-                st.success("Message hidden successfully!")
-                st.image("temp_output.png", caption="Your image with the hidden message")
-
                 with open("temp_output.png", "rb") as f:
-                    st.download_button("Download image", f, file_name="secret_image.png", mime="image/png")
+                    st.session_state.output_image_bytes = f.read()
 
                 pub_key = load_public_key(receiver_pub_file.read())
                 encrypted_pw = rsa_encrypt(pub_key, passphrase.encode())
@@ -100,13 +97,24 @@ elif mode == "Hide a message":
 
                 buf = io.BytesIO()
                 qr_img.save(buf, format="PNG")
-                qr_bytes = buf.getvalue()
+                st.session_state.qr_bytes = buf.getvalue()
 
-                st.image(qr_bytes, caption="QR code (send this separately from the image)")
-                st.download_button("Download QR code", qr_bytes, file_name="passphrase_qr.png")
+                st.session_state.hide_success = True
 
             except ValueError as e:
                 st.error(str(e))
+                st.session_state.hide_success = False
+
+    if st.session_state.get("hide_success"):
+        st.success("Message hidden successfully!")
+
+        st.image(st.session_state.output_image_bytes, caption="Your image with the hidden message")
+        st.download_button("Download image", st.session_state.output_image_bytes,
+                            file_name="secret_image.png", mime="image/png")
+
+        st.image(st.session_state.qr_bytes, caption="QR code (send this separately from the image)")
+        st.download_button("Download QR code", st.session_state.qr_bytes,
+                            file_name="passphrase_qr.png")
 
 # ===========================================================
 else:
