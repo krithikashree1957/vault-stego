@@ -112,7 +112,12 @@ elif mode == "Hide a message":
         st.download_button("Download image", st.session_state.output_image_bytes,
                             file_name="secret_image.png", mime="image/png")
 
-        st.image(st.session_state.qr_bytes, caption="QR code (send this separately from the image)")
+        qr_caption = (
+            "QR code — the more secure option; requires the receiver's private key to unlock"
+            if not show_passphrase else
+            "QR code (optional secure alternative — receiver can also use this instead of the passphrase above)"
+        )
+        st.image(st.session_state.qr_bytes, caption=qr_caption)
         st.download_button("Download QR code", st.session_state.qr_bytes,
                             file_name="passphrase_qr.png")
 
