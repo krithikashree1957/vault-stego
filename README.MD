@@ -32,6 +32,23 @@ This is a **hybrid encryption** design — the same pattern used by real-world s
 - ⚖️ Two sharing modes: **Secure** (QR + private key only) and **Convenience** (plain passphrase, with QR as a backup option)
 - ✅ Built-in validation: wrong passphrase, wrong image, wrong key, or oversized message all fail safely with clear errors
 
+## Screenshots
+
+**Generating your key pair:**
+![Generate keys](screenshots/generate_keys.png)
+
+**Hiding a message:**
+![Hide message](screenshots/hide_message.png)
+
+**Output: hidden image + QR code:**
+![Hide result](screenshots/hide_result.png)
+
+**Revealing a message:**
+![Reveal message](screenshots/reveal_message.png)
+
+**Before vs. after — visually identical:**
+![Comparison](screenshots/comparison.png)
+
 ## Tech Stack
 
 - **Python** — core language
