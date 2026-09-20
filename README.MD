@@ -35,19 +35,19 @@ This is a **hybrid encryption** design — the same pattern used by real-world s
 ## Screenshots
 
 **Generating your key pair:**
-![Generate keys](screenshots/generate_keys.png)
+![Generate keys](Screenshots/generate_keys.png)
 
 **Hiding a message:**
-![Hide message](screenshots/hide_message.png)
+![Hide message](Screenshots/hide_message.png)
 
 **Output: hidden image + QR code:**
-![Hide result](screenshots/hide_result.png)
+![Hide result](Screenshots/hide_result.png)
 
 **Revealing a message:**
-![Reveal message](screenshots/reveal_message.png)
+![Reveal message](Screenshots/reveal_message.png)
 
 **Before vs. after — visually identical:**
-![Comparison](screenshots/comparison.png)
+![Comparison](Screenshots/comparison.png)
 
 ## Tech Stack
 
@@ -100,3 +100,10 @@ Building this taught me several real security concepts I hadn't worked with hand
 ## AI Usage Disclosure
 
 This project was built with significant AI assistance (Claude, by Anthropic) as a learning aid — helping explain cryptographic concepts, debug integration issues, and structure the code. All design decisions, architecture choices, and understanding of how each piece works were driven and reviewed by me throughout the build.
+
+## Author
+
+Built by [Your Name] for the Beginner's Paradise - FirstCommit hackathon (2026).
+
+- GitHub: [krithikashree1957](https://github.com/krithikashree1957)
+- Devpost: [Krithika shree Karthikeyan's Devpost Portfolio.](https://devpost.com/krithikashree1957?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav&utm_source=gemini)
