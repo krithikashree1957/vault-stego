@@ -56,6 +56,8 @@ What started as a question became a hands-on way for me to understand how AES-GC
 ```text
 Private key → unlocks → passphrase (via QR) → unlocks → hidden message (via image)
 ````
+![Workflow of Vault](Screenshots/workflow.png)
+
 
 This is a **hybrid encryption** design — the same pattern used by real-world systems like Signal and PGP: fast symmetric encryption (AES) protects the bulk data, while slower asymmetric encryption (RSA) protects only the small key that unlocks it.
 
