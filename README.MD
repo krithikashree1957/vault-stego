@@ -18,35 +18,18 @@ Try Vault live here:
 
 [Watch the 40-second demo](YOUR_DEMO_VIDEO_LINK)
 
-## The Problem
-
-I started thinking about this from a simple question:
-
-**What if I need to send someone something private, but I don't even want the message itself to attract attention?**
-
-Encryption solves the first part. It makes the message unreadable without the right key. But an encrypted file still looks like an encrypted file. Anyone who sees it knows there's probably something worth hiding.
-
-Sometimes, the safest-looking message isn't a message that looks encrypted at all.
-
-It's a completely ordinary photo.
-
-That's the idea behind Vault — hide the encrypted message inside an ordinary image using steganography. To everyone else, it looks like just another picture. For the intended receiver, there's a secret waiting underneath.
-
-Because sometimes, security isn't only about hiding the information. It's about hiding the existence of the information itself.
 
 ## Why I Built Vault
 
-Vault started with a simple question:
+Vault started with a simple question: **what if a message could be private without even looking private?**
 
-**What if a message could be kept private without making it look private?**
+Encryption solves half the problem — it makes a message unreadable without the right key. But an encrypted file still *looks* encrypted. Anyone who sees it knows there's probably something worth hiding, which can itself draw unwanted attention.
 
-When we think about secure communication, we usually think about encryption — making the contents unreadable to anyone without the key. But that still leaves a visible signal that something has been protected.
+That got me thinking about the other side of security: hiding the *existence* of the message, not just its content. Sometimes the safest-looking message isn't one that looks encrypted at all — it's a completely ordinary photo.
 
-That made me curious about the other side of security: hiding the existence of the message itself.
+So I built Vault to explore that idea, combining encryption and steganography so the sender can share an ordinary-looking image with a hidden, encrypted message underneath — invisible to anyone except the intended receiver.
 
-So I built Vault as a way to explore that idea by combining encryption and steganography. Instead of sending a file that obviously looks encrypted, the sender can share an ordinary-looking image containing a hidden, encrypted message.
-
-What started as a question became a hands-on way for me to understand how AES-GCM, PBKDF2, RSA, key handling, QR-based key sharing, and LSB steganography can work together in one system.
+What started as a question became a hands-on way for me to understand how AES-GCM, PBKDF2, RSA, key handling, QR-based key sharing, and LSB steganography can all work together in one system.
 
 ## How It Works
 
