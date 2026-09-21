@@ -6,6 +6,13 @@
 Vault combines **AES-GCM encryption, RSA public-key cryptography, and image steganography** to hide an encrypted message inside an ordinary PNG image.
 
 Built for the FirstCommit hackathon.
+## 🚀 Live Demo
+
+Try Vault live here:
+
+👉 **[Launch Vault](https://vault-stego-bezmbblrdj2x4mgwbgit6m.streamlit.app/)**
+
+> No installation required — open the app and try hiding and revealing a message.
 
 ## 🎥 Demo Video
 
